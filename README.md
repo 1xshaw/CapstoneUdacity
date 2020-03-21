@@ -75,14 +75,21 @@ Some technical features are:
 
 
 ## Screenshots
+
+#### Lint Failed
 ![Lintfailed](/screenshots/Lint_error.png)
 
+#### Lint successed
 ![Lintsuccessed](/screenshots/Lint_successful.png)
 
+#### Pipeline successed
 ![Pipeline](/screenshots/Jenkins_pipeline_deployment_success.png)
 
+#### Cloudformation result
 ![CloudFormation](/screenshots/cloudformation.png)
 
+#### EKS
 ![EKS](/screenshots/eks.png)
 
+#### Instances
 ![Instances](/screenshots/instances.png)
