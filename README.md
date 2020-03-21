@@ -75,11 +75,11 @@ Some technical features are:
 
 
 ## Screenshots
-![Lint failed](/screenshots/Lint error.png)
+![Lintfailed](/screenshots/Lint_error.png)
 
-![Lint successed](/screenshots/Lint successful.png)
+![Lintsuccessed](/screenshots/Lint_successful.png)
 
-![Pipeline](/screenshots/Jenkins pipeline deployment success.png)
+![Pipeline](/screenshots/Jenkins_pipeline_deployment_success.png)
 
 ![CloudFormation](/screenshots/cloudformation.png)
 
