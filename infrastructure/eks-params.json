@@ -33,6 +33,6 @@
   },
   {
     "ParameterKey": "KeyName",
-    "ParameterValue": "udacity-devin"
+    "ParameterValue": "keypair-project2"
   }
 ]
