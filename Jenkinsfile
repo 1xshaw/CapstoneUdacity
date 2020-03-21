@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                         withAWS(credentials: 'aws-static', region: 'us-west-2'){
-                            sh "aws eks update-kubeconfig --region us-west-2 --name udacitycluster"
+                            sh "aws eks update-kubeconfig --region us-west-2 --name udacity-cluster"
                             sh 'kubectl apply -f deploy/green.yml'
                         }
                 }
