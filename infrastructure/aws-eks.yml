@@ -28,7 +28,7 @@ Parameters:
     Type: String
     Default: 192.168.192.0/18
     Description: CidrBlock for subnet 03 within the VPC. This is used only if the region has more than 2 AZs.
-  
+
   ClusterName:
     Description: EKS cluster name
     Type: String
@@ -52,7 +52,7 @@ Parameters:
   KeyName:
     Description: The EC2 Key Pair to allow SSH access to the instances
     Type: AWS::EC2::KeyPair::KeyName
-    Default: "udacity-devin"
+    Default: "keypair-project2"
 
 Metadata:
   AWS::CloudFormation::Interface:
@@ -233,10 +233,10 @@ Resources:
 
   AmazonEKS:
     Type: AWS::EKS::Cluster
-    Properties: 
+    Properties:
       Name: !Ref ClusterName
       ResourcesVpcConfig:
-        SecurityGroupIds: 
+        SecurityGroupIds:
           - Ref: ControlPlaneSecurityGroup
         SubnetIds: [!Ref Subnet01, !Ref Subnet02, !Ref Subnet03]
       RoleArn: {
@@ -355,7 +355,7 @@ Resources:
       MaxSize: '3'
       TargetGroupARNs:
         - Ref: WebAppTargetGroup
-      VPCZoneIdentifier: 
+      VPCZoneIdentifier:
         - Ref: "Subnet01"
         - Ref: "Subnet02"
         - Ref: "Subnet03"
@@ -389,7 +389,7 @@ Resources:
             VolumeType: gp2
             DeleteOnTermination: true
       UserData:
-        Fn::Base64: 
+        Fn::Base64:
           !Sub |
             #!/bin/bash
             set -o xtrace
