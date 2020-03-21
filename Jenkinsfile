@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                        def app = docker.build("devinyang1992/udacityclouddevopsnanodegree:latest", '.')
+                        def app = docker.build("1xshaw/udacityclouddevopsnanodegree:latest", '.')
                         app.push()
                     }
                 }
@@ -31,7 +31,7 @@ pipeline {
         stage ('Green deployment') {
             steps {
                 script {
-                        withAWS(credentials: 'aws-credentials', region: 'us-west-2'){
+                        withAWS(credentials: 'aws-static', region: 'us-west-2'){
                             sh "aws eks update-kubeconfig --region us-west-2 --name udacitycluster"
                             sh 'kubectl apply -f deploy/green.yml'
                         }
@@ -42,7 +42,7 @@ pipeline {
         stage ('Blue deployment') {
             steps {
                script {
-                   withAWS(credentials: 'aws-credentials', region: 'us-west-2'){
+                   withAWS(credentials: 'aws-static', region: 'us-west-2'){
                     sh 'kubectl apply -f deploy/blue.yml'
                     sh 'echo "Blue deployment successfully"'
                    }
