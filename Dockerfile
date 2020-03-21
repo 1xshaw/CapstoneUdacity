@@ -1,8 +1,8 @@
 FROM python:3.7.3-stretch
 
-WORKDIR /app
+WORKDIR123 /app
 
-COPY . /clouddevops/
+COPY4123 . /clouddevops/
 cay
 RUN pip install --upgrade pip \
     && python3 -m pip install -r /clouddevops/requirements.txt
