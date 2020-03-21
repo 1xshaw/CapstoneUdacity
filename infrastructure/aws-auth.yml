@@ -1,17 +1,17 @@
-apiVersion: v1 
-kind: ConfigMap 
-metadata: 
-  name: aws-auth 
-  namespace: kube-system 
-data: 
-  mapRoles: | 
-    - rolearn: arn:aws:iam::030240492505:role/udacityclouddevopscapstone-EKSRole-RPVHC94FLYC2
-      username: system:node:{{EC2PrivateDNSName}} 
-      groups: 
-        - system:bootstrappers 
-        - system:nodes 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:eks:us-west-2:401601166836:cluster/udacity-cluster
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
   mapUsers: | 
-    - userarn: arn:aws:iam::030240492505:user/devin
-      username: designated_user 
-      groups: 
+    - userarn: arn:aws:iam::401601166836:user/1xshaw
+      username: designated_user
+      groups:
         - system:masters

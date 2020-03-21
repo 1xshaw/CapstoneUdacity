@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: devops-capstone
-          image: devinyang1992/udacityclouddevopsnanodegree:latest
+          image: 1xshaw/udacityclouddevopsnanodegree:latest
           ports:
             - containerPort: 80
 ---
@@ -32,4 +32,3 @@ spec:
       port: 80
   type: LoadBalancer
 ---
-
