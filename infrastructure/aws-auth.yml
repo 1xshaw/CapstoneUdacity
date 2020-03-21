@@ -11,7 +11,7 @@ data:
         - system:bootstrappers
         - system:nodes
   mapUsers: |
-    - userarn: arn:aws:iam::401601166836:user/1xshaw
+    - userarn: arn:aws:iam::401601166836:user/jenkins
       username: designated_user
       groups:
         - system:masters
