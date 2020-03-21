@@ -1,9 +1,9 @@
-1234FROM python:3.7.3-stretch
+ROM python:3.7.3-stretch
 
-WORKDIR123 /app
+WORKDIR /app
 
-COPY4123 . /clouddevops/
-cay
+COPY . /clouddevops/
+
 RUN pip install --upgrade pip \
     && python3 -m pip install -r /clouddevops/requirements.txt
 
